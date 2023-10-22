@@ -337,7 +337,7 @@ for atlas in BNA aparc500 BNA+cerebellum 300P7N; do
 			labelconvert ${fmriprepdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}space-${outputspace}_atlas-${atlas}_temp.nii.gz \
 				${atlasdir}/Schaefer/${ID}_orig.txt \
 				${atlasdir}/Schaefer/${ID}_modified.txt \
-				${fmriprepdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}space-${outputspace}_atlas-${atlas}_temp.nii.gz -force
+				${fmriprepdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}space-${outputspace}_atlas-${atlas}_dseg.nii.gz -force
 		fi
 		unset ID
 
