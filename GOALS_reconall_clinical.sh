@@ -45,10 +45,10 @@ bidsdir=${1}
 derivativesdir=${2}
 subj=${3}
 session=${4}
+acquisition=${5}
 
 ## change these according to needs ##
 ncores=8
-acquisition=acq-highres_ce-gado
 #####################################
 
 if [ -z "$session" ]; then
@@ -64,7 +64,11 @@ freesurferdir=${derivativesdir}/freesurfer
 mkdir -p ${freesurferdir}
 export SUBJECTS_DIR=${freesurferdir}
 
-#ls -d
+if [ ! -f ${bidsdir}/${subj}${sessionpath}anat/${subj}${sessionfile}${acquisition}_T1w.nii.gz ]; then 
+echo "ERROR! input anatomical scan does not exist" 
+echo ${subj}${sessionfile}${acquisition}_T1w.nii.gz
+exit
+fi
 
 recon-all-clinical.sh \
     ${bidsdir}/${subj}${sessionpath}anat/${subj}${sessionfile}${acquisition}_T1w.nii.gz \
@@ -75,7 +79,7 @@ recon-all-clinical.sh \
 # check if finished correctly
 if [ ! -f ${freesurferdir}/${subj}/scripts/recon-all.done ]; then
     echo
-    echo "ERROR! FreeSurfer did finish correctly"
+    echo "ERROR! FreeSurfer did not finish correctly"
     echo "abort script"
     sleep 1
     exit
