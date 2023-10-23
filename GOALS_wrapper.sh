@@ -30,7 +30,6 @@ run=run-1 # run ID
 ###########################
 # check if files exist
 
-
 if [ -z "$session" ]; then
     # sess empty
     sessionpath=/
@@ -60,9 +59,9 @@ if [ ! -f ${bidsdir}/${subj}${sessionpath}anat/${subj}${sessionfile}${acqfile}T1
     echo ${subj}${sessionfile}${acqfile}_T1w.nii.gz
     exit
 fi
-if [ ! -f ${bidsdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}_bold.nii.gz ]; then
+if [ ! -f ${bidsdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}bold.nii.gz ]; then
     echo "ERROR! input functional scan does not exist"
-    echo ${subj}${sessionfile}task-${task}${runfile}_bold.nii.gz
+    echo ${subj}${sessionfile}task-${task}${runfile}bold.nii.gz
     exit
 fi
 ###########################

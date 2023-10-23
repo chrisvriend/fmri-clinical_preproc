@@ -55,6 +55,7 @@ NompCORES=8
 ##################
 #### FMRIPREP ####
 ##################
+subjbids=${subj#sub-*}
 
 mkdir -p ${workdir} ${derivativesdir}/fmriprep
 apptainer run --cleanenv ${fmripreppath} \
@@ -62,7 +63,7 @@ apptainer run --cleanenv ${fmripreppath} \
     --participant-label $(echo ${subjbids}) \
     --bold2t1w-dof 6 \
     --skip-bids-validation \
-    --ignore fieldmaps flair \
+    --ignore flair t2w \
     --dummy-scans 4  \
     --fs-license-file=${fslicense} \
     --nthreads=${NCORES} \
