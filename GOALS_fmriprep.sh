@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --time=00-8:00:00
 #SBATCH --nice=2000
-#SBATCH --output fmriprep_%A_%a.log
+#SBATCH --output fmriprep_%A.log
 #SBATCH --mail-type=END,FAIL
 ##################################END SLURM CODE#######################################################
 

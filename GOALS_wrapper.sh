@@ -49,14 +49,14 @@ fi
 
 if [ -z "$acq" ]; then
     # acq empty
-    acqfile=_
+    :
 else
-    acqfile=_${acq}_
+    acqfile=${acq}_
 fi
 
 if [ ! -f ${bidsdir}/${subj}${sessionpath}anat/${subj}${sessionfile}${acqfile}T1w.nii.gz ]; then
     echo "ERROR! input anatomical scan does not exist"
-    echo ${subj}${sessionfile}${acqfile}_T1w.nii.gz
+    echo ${subj}${sessionfile}${acqfile}T1w.nii.gz
     exit
 fi
 if [ ! -f ${bidsdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}bold.nii.gz ]; then
