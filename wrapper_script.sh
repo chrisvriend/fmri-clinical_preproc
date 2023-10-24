@@ -67,10 +67,10 @@ fi
 ###########################
 
 echo "run FreeSurfer"
-sbatch --wait GOALS_reconall_clinical.sh ${bidsdir} ${derivativesdir} ${subj} ${session} ${acq}
+sbatch --wait run_reconall_clinical.sh ${bidsdir} ${derivativesdir} ${subj} ${session} ${acq}
 echo
 echo "run fmriprep"
-sbatch --wait GOALS_fmriprep.sh ${bidsdir} ${workdir} ${derivativesdir} ${subj}
+sbatch --wait run_fmriprep.sh ${bidsdir} ${workdir} ${derivativesdir} ${subj}
 
 ##########################################################################################
 # perhaps not necessary anymore.
@@ -83,6 +83,6 @@ echo "denoise functional images"
 sbatch --wait rsfmridenoise.sh ${derivativesdir} ${scriptdir} ${subj} ${task} ${denoise_protocol} ${session} ${run}
 
 echo "warp atlases to FreeSurfer and extract timeseries"
-sbatch --wait Atlas2FreeSurfer_sbatch.sh ${derivativesdir} ${subj} ${task} ${denoise_protocol} ${session} ${run}
+sbatch --wait run_atlas2freesurfer.sh ${derivativesdir} ${subj} ${task} ${denoise_protocol} ${session} ${run}
 
 echo "DONE with ${subj}"
