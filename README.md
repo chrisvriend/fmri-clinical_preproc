@@ -1,5 +1,5 @@
-# GOALS_fmri
-fmri processing, denoising and timeseries extraction scripts for GOALS project
+# fmri-clinical_preproc
+fmri processing, denoising and timeseries extraction scripts for hard to segment anatomical scans (e.g. due to space-occupying lesions)
 
 C. Vriend - Amsterdam UMC - Oct 22 2023
 
@@ -15,9 +15,9 @@ for more info on these pipelines see
 https://fmridenoise.readthedocs.io/en/latest/pipelines.html
 and the rsfmridenoise*.sh scripts ==> the main scripts to call.
 
-thereafter atlases are warped to FreeSurfer space and timeseries are extracted from the denoised fMRI scan.
+thereafter atlases are resampled to FreeSurfer space and timeseries are extracted from the denoised fMRI scan.
 
-GOALS_wrapper.sh calls all other scripts. Scripts have been optimized for use on the luna server of Amsterdam UMC (in combination with SLURM)and require several inputs (see usage info in each script).
+wrapper_script.sh calls all other scripts. Scripts have been optimized for use on the luna server of Amsterdam UMC (in combination with SLURM) and require several inputs (see usage info in each script).
 
 Paths and variables will need to be changed INSIDE the script to specify the denoising pipeline, number of dummy scans to remove, smoothing kernel, etc. 
 
