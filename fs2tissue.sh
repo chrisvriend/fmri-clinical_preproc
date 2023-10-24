@@ -40,7 +40,7 @@ EOF
 [ _$5 = _ ] && Usage
 
 # source software
-module load FreeSurfer/7.4.1-centos8_x86_64
+module load FreeSurfer/7.4.1.bugfix-centos8_x86_64
 module load fsl/6.0.6.5
 module load ANTs/2.4.1
 afnitools_container=/scratch/anw/share-np/AFNIr

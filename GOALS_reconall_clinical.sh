@@ -39,7 +39,7 @@ EOF
 [ _$3 = _ ] && Usage
 
 # source FreeSurfer
-module load FreeSurfer/7.4.1-centos8_x86_64
+module load FreeSurfer/7.4.1.bugfix-centos8_x86_64
 
 bidsdir=${1}
 derivativesdir=${2}

@@ -2,7 +2,7 @@
 
 
 
-module load FreeSurfer/7.4.1-centos8_x86_64
+module load FreeSurfer/7.4.1.bugfix-centos8_x86_64
 
 
 bidsdir=/home/anw/cvriend/my-scratch/GOALS/bids

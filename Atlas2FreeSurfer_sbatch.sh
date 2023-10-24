@@ -42,7 +42,7 @@ atlasdir=/data/anw/anw-gold/NP/doorgeefluik/atlas4FreeSurfer
 
 # source software
 module load fsl/6.0.6.5
-module load FreeSurfer/7.4.1-centos8_x86_64
+module load FreeSurfer/7.4.1.bugfix-centos8_x86_64
 module load Anaconda3/2023.03
 mrtrix_env=/scratch/anw/share/python-env/mrtrix
 conda activate ${mrtrix_env}
