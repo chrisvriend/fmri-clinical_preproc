@@ -16,6 +16,8 @@ https://fmridenoise.readthedocs.io/en/latest/pipelines.html
 and the rsfmridenoise*.sh scripts ==> the main scripts to call.
 
 thereafter atlases are resampled to FreeSurfer space and timeseries are extracted from the denoised fMRI scan.
+atlas files can be found here: https://github.com/chrisvriend/atlas2freesurfer/blob/main/atlases.tar.7z
+
 
 wrapper_script.sh calls all other scripts. Scripts have been optimized for use on the luna server of Amsterdam UMC (in combination with SLURM) and require several inputs (see usage info in each script).
 
