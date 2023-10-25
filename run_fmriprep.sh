@@ -52,6 +52,19 @@ subj=${4}
 NCORES=8
 NompCORES=8
 
+
+# check if necessary FreeSufer files are there
+if [[ ! -e ${derivativesdir}/freesurfer/${subj}/mri/orig/001.mgz \
+|| ! -f ${derivativesdir}/freesurfer/${subj}/scripts/recon-all.done \
+|| ! -f ${derivativesdir}/freesurfer/${subj}/mri/aseg.mgz ]]; then
+ echo
+    echo "ERROR! FreeSurfer did not finish correctly"
+    echo "abort script"
+    exit
+fi
+
+
+
 ##################
 #### FMRIPREP ####
 ##################

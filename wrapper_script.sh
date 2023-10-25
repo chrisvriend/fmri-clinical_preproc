@@ -2,14 +2,14 @@
 
 # (C) Chris Vriend - AmsUMC - 23-10-2023
 
-#SBATCH --job-name=GOALS_wrapper
+#SBATCH --job-name=fmripreproc_wrap
 #SBATCH --mem=1G
 #SBATCH --partition=luna-cpu-long
 #SBATCH --qos=anw-cpu
 #SBATCH --cpus-per-task=1
 #SBATCH --time=01-0:00:00
 #SBATCH --nice=2000
-#SBATCH --output=GOALS_wrapper_%A.log
+#SBATCH --output=fmripreproc_wrapper_%A.log
 
 # paths
 bidsdir=/home/anw/cvriend/my-scratch/GOALS/bids
