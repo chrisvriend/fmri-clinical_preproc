@@ -27,7 +27,7 @@ Usage() {
 
     Usage: sbatch ./initialize_slurmarray.sh <subjects> 
     Obligatory:
-    subjects = full path to txt file with subjectIDs in bids directory 
+    subjects = full path to txt file with subjectIDs (starting with sub-*) in bids directory 
     (path should be specified in wrapper.4array) for which preprocessing pipeline should be run
 
     NOTES:
@@ -41,8 +41,7 @@ EOF
 [ _$1 = _ ] && Usage
 
 
-subjects=${1} # full path to 
-
+subjects=${1} # full path to txt file with subjectIDs
 
 subj=$(sed -n "${SLURM_ARRAY_TASK_ID}p" ${subjects})
 # random delay
