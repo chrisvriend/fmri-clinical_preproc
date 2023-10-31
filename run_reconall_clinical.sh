@@ -76,14 +76,18 @@ recon-all-clinical.sh \
     ${ncores} \
     ${freesurferdir}
 
-# check if finished correctly
-if [ ! -f ${freesurferdir}/${subj}/scripts/recon-all.done ]; then
-    echo
+
+
+# check if necessary FreeSufer files are there
+if [[ ! -f ${freesurferdir}/${subj}/mri/wmparc.mgz \
+|| ! -f ${freesurferdir}/${subj}/mri/aseg.mgz ]]; then
+ echo
     echo "ERROR! FreeSurfer did not finish correctly"
     echo "abort script"
-    sleep 1
     exit
 fi
+
+
 
 for scan in orig rawavg orig_nu T1 nu; do
 
