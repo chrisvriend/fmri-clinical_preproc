@@ -50,5 +50,5 @@ echo -e "INITIALIZING...(wait a sec)"
 echo
 sleep ${duration}
 
-sbatch wrapper.4array ${subj}
+sbatch --wait wrapper.4array ${subj}
 
