@@ -137,6 +137,7 @@ if [[ ! -f ${SUBJECTS_DIR}/${subj}/mri/BNA+aseg.nii.gz ]]; then
 	mrconvert ${SUBJECTS_DIR}/${subj}/mri/BNA+aseg.mgz ${SUBJECTS_DIR}/${subj}/mri/BNA+aseg.nii.gz -force
 fi
 
+
 #=============================================================================
 # BUCKNER CEREBELLUM TO FREESURFER SPACE
 #=============================================================================
@@ -252,6 +253,12 @@ for parcel in 300P7N 400P7N 300P17N 400P17N; do
 		mri_aparc2aseg --s ${subj} --o ${SUBJECTS_DIR}/${subj}/mri/${parcel}+aseg.mgz --annot ${parcel}
 		mrconvert ${SUBJECTS_DIR}/${subj}/mri/${parcel}+aseg.mgz ${SUBJECTS_DIR}/${subj}/mri/${parcel}+aseg.nii.gz -force
 	fi
+
+	if [ ! -f ${SUBJECTS_DIR}/${subj}/mri/${parcel}+aseg.nii.gz ]; then 
+	echo "ERROR! something went wrong in converting the Schaefer ${parcel} atlas to volume space" 
+	echo "exiting script"
+	exit
+	fi 
 	#=============================================================================
 	# MAKE HYBRID 300/400P7N CEREBELLUM ATLAS
 	#=============================================================================
