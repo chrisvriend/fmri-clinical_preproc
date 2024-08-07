@@ -408,9 +408,9 @@ for atlas in BNA aparc500 BNA+cerebellum 300P7N; do
 	# extract roi volumes #
 	echo "extract roi volumes for ${atlas}"
 	fslstats -K ${fmriprepdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}space-${outputspace}_atlas-${atlas}_dseg.nii.gz \
-		${denoisedimg} -V | awk '{ print $2 }' >${fmriprepdir}/${subj}${sessionpath}roivols/${subj}${sessionfile}atlas-${atlas}_roivols.txt
+		${boldreffile} -V | awk '{ print $2 }' >${fmriprepdir}/${subj}${sessionpath}roivols/${subj}${sessionfile}atlas-${atlas}_roivols.txt
 	fslstats -K ${fmriprepdir}/${subj}${sessionpath}func/${subj}${sessionfile}task-${task}${runfile}space-${outputspace}_atlas-${atlas}_dseg.nii.gz \
-		${denoisedimg} -V | awk '{ print $2 }' >${fmriprepdir}/${subj}${sessionpath}roivols/${subj}${sessionfile}atlas-${atlas}_roivols_minmasked.txt
+		${boldreffile} -V | awk '{ print $2 }' >${fmriprepdir}/${subj}${sessionpath}roivols/${subj}${sessionfile}atlas-${atlas}_roivols_minmasked.txt
 
 	##############
 	# add headers
